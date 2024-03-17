@@ -20,7 +20,7 @@ public class Deck {
                 cards.add(new Card(suit, rank));
             }
         }
-        shuffle();
+        shuffle(); // shuffle card once deck is initialized
     }
 
     // Method to shuffle the deck
@@ -31,6 +31,7 @@ public class Deck {
     // Method to deal a specified number of cards from the deck
     public List<Card> dealCards(int numCards) {
         List<Card> dealtCards = new ArrayList<>();
+        if (cards != null) shuffle();
         for (int i = 0; i < numCards; i++) {
             if (!cards.isEmpty()) {
                 dealtCards.add(cards.remove(0)); // Remove the top card from the deck
@@ -42,6 +43,7 @@ public class Deck {
         return dealtCards;
     }
 
+    // Method to get number of cards in the deck with a suit of HEARTS
     public Integer getHeartsCount() {
         Integer total = 0;
         for (Card card : cards) {
@@ -52,6 +54,7 @@ public class Deck {
         return total;
     }
 
+    // Method to get number of cards in the deck with a suit of DIAMONDS
     public Integer getDiamondsCount() {
         Integer total = 0;
         for (Card card : cards) {
@@ -62,6 +65,7 @@ public class Deck {
         return total;
     }
 
+    // Method to get number of cards in the deck with a suit of SPADES
     public Integer getSpadesCount() {
         Integer total = 0;
         for (Card card : cards) {
@@ -72,6 +76,7 @@ public class Deck {
         return total;
     }
 
+    // Method to get number of cards in the deck with a suit of CLUBS
     public Integer getClubsCount() {
         Integer total = 0;
         for (Card card : cards) {

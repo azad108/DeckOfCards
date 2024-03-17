@@ -4,16 +4,18 @@ public class Card {
     private Suit suit;
     private Rank rank;
 
+    // Constructor for Card class
     public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
     }
 
-    // Getter methods for suit and rank
+    // Getter method for suit
     public Suit getSuit() {
         return suit;
     }
 
+    // Getter method for rank
     public Rank getRank() {
         return rank;
     }

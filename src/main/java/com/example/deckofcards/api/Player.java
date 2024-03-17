@@ -7,6 +7,7 @@ public class Player {
     private List<Card> hand;
     private Integer handValue;
 
+    // Constructor for the Player class
     public Player(String id) {
         this.id = id;
         this.hand = new ArrayList<>();
@@ -33,12 +34,13 @@ public class Player {
         hand.add(card);
         handValue += card.getRank().ordinal() + 1;
     }
+
+    // code to override hashCode method to implement concurrency with HashMap
     @Override
     public int hashCode() 
     {
        return (int)id.hashCode();
     }
-  
     @Override
     public boolean equals(Object obj)
     {
