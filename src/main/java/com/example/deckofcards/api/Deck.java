@@ -1,13 +1,12 @@
 package com.example.deckofcards.api;
-import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Component
-public class Deck {
-    private List<Card> cards;
 
+public class Deck {
+    private final List<Card> cards;
+    
     // Constructor to initialize the deck
     public Deck() {
         cards = new ArrayList<>();
@@ -21,6 +20,7 @@ public class Deck {
                 cards.add(new Card(suit, rank));
             }
         }
+        shuffle();
     }
 
     // Method to shuffle the deck
@@ -42,5 +42,43 @@ public class Deck {
         return dealtCards;
     }
 
+    public Integer getHeartsCount() {
+        Integer total = 0;
+        for (Card card : cards) {
+            if (card.getSuit() == Suit.HEARTS) {
+                total += 1;
+            }
+        }
+        return total;
+    }
 
+    public Integer getDiamondsCount() {
+        Integer total = 0;
+        for (Card card : cards) {
+            if (card.getSuit() == Suit.DIAMONDS) {
+                total += 1;
+            }
+        }
+        return total;
+    }
+
+    public Integer getSpadesCount() {
+        Integer total = 0;
+        for (Card card : cards) {
+            if (card.getSuit() == Suit.SPADES) {
+                total += 1;
+            }
+        }
+        return total;
+    }
+
+    public Integer getClubsCount() {
+        Integer total = 0;
+        for (Card card : cards) {
+            if (card.getSuit() == Suit.CLUBS) {
+                total += 1;
+            }
+        }
+        return total;
+    }
 }

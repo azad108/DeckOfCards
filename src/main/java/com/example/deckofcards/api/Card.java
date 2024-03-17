@@ -1,7 +1,5 @@
 package com.example.deckofcards.api;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Card {
     private Suit suit;
     private Rank rank;
